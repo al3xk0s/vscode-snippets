@@ -1,0 +1,50 @@
+{
+	"Get args": {
+		"scope": "bash,shellscript",
+		"prefix": "args",
+		"body": [
+			"${@}"
+		],
+		"description": "Get args"
+	},
+	"Insert array value": {
+		"scope": "bash,shellscript",
+		"prefix": "arval",
+		"body": [
+			"\"\\${${1:array}[${2:val}]}\""
+		],
+		"description": "Insert array value"
+	},
+	"Insert array values": {
+		"scope": "bash,shellscript",
+		"prefix": "arvals",
+		"body": [
+			"\\${${1:array}[@]}"
+		],
+		"description": "Insert array values"
+	},
+	"Insert array keys": {
+		"scope": "bash,shellscript",
+		"prefix": "arkeys",
+		"body": [
+			"\\${!${1:array}[@]}"
+		],
+		"description": "Insert array keys"
+	},
+	"Insert array length": {
+		"scope": "bash,shellscript",
+		"prefix": "arlen",
+		"body": [
+			"\"\\${#${1:array}[@]}\""
+		],
+		"description": "Insert array length"
+	},
+	"Declare map length": {
+		"scope": "bash,shellscript",
+		"prefix": "map",
+		"body": [
+			"declare -A ${1:map}"
+		],
+		"description": "Insert array length"
+	},
+}

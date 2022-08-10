@@ -1,0 +1,57 @@
+{
+	"Insert class": {
+		"scope": "bash,shellscript",
+		"prefix": "class",
+		"body": [
+			"function ${1:ClassName} {",
+			"\tlocal this=\"\\$1\"",
+			"\textends Object \"\\$this\"",
+			"\t$0",
+			"}"
+		],
+		"description": "Insert class"
+	},
+	"Insert method": {
+		"scope": "bash,shellscript",
+		"prefix": "method",
+		"body": [
+			"$1.$2() {",
+			"\tlocal this=\"\\$1\"",
+			"\t$0",
+			"}"
+		],
+		"description": "Insert method"
+	},
+	"Insert call method": {
+		"scope": "bash,shellscript",
+		"prefix": "call",
+		"body": [
+			"call \\$${1:obj}.$0",
+		],
+		"description": "Insert call method"
+	},
+	"Insert property call": {
+		"scope": "bash,shellscript",
+		"prefix": "prop",
+		"body": [
+			"p \\$${1:obj}.$0",
+		],
+		"description": "Call of property"
+	},
+	"Insert this": {
+		"scope": "bash,shellscript",
+		"prefix": "this",
+		"body": [
+			"$1 \\$this.$0",
+		],
+		"description": "Call of this"
+	},
+	"Insert new instance": {
+		"scope": "bash,shellscript",
+		"prefix": "new",
+		"body": [
+			"new ${1:obj} = ${2:Object}"
+		],
+		"description": "Create new instance"
+	}
+}

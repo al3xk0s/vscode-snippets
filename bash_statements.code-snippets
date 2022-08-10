@@ -1,0 +1,157 @@
+{
+    "Insert function": {
+		"scope": "bash,shellscript",
+		"prefix": "function",
+		"body": [
+			"function ${1:fooBarName}() {",
+			"\t$0",
+			"}"
+		],
+		"description": "Insert function"
+	},
+    "Insert foreach": {
+		"scope": "bash,shellscript",
+		"prefix": "foreach",
+		"body": [
+			"local ${1:item}",
+            "for ${1:item} in array; do",
+            "\t$0",
+            "done",
+		],
+		"description": "Insert foreach loop"
+	},
+    "Insert for": {
+		"scope": "bash,shellscript",
+		"prefix": "for",
+		"body": [
+			"local ${1:i}",
+            "for ((${1:i} = 0 ; ${1:i} < length ; ${1:i}++)); do",
+            "\t$0",
+            "done",
+		],
+		"description": "Insert for loop"
+	},
+    "Insert while": {
+		"scope": "bash,shellscript",
+		"prefix": "while",
+		"body": [
+            "while [ condition ]; do",
+            "\t$0",
+            "done",
+		],
+		"description": "Insert while loop"
+	},
+    "Insert while command do": {
+		"scope": "bash,shellscript",
+		"prefix": "while-c",
+		"body": [
+            "while command; do",
+            "\t$0",
+            "done",
+		],
+		"description": "Insert while command loop"
+	},
+    "Insert do while": {
+		"scope": "bash,shellscript",
+		"prefix": "dowhile",
+		"body": [
+            "while true; do",
+			"\t$0",
+            "\tif [[ condition ]]; then",
+            "\t\tbreak",
+            "\tfi",            
+            "done",
+		],
+		"description": "Insert do while loop"
+	},
+    "Insert if statement": {
+		"scope": "bash,shellscript",
+		"prefix": "if",
+		"body": [
+            "if [[ condition ]]; then",
+            "\t$0",
+            "fi",
+		],
+		"description": "Insert if statement"
+	},
+	"Insert if command": {
+		"scope": "bash,shellscript",
+		"prefix": "if-c",
+		"body": [
+            "if command; then",
+            "\t$0",
+            "fi",
+		],
+		"description": "Insert if command statement"
+	},
+	"Insert elif statement": {
+		"scope": "bash,shellscript",
+		"prefix": "elif",
+		"body": [
+            "elif [[ condition ]]; then",
+            "\t$0",
+		],
+		"description": "Insert elif statement"
+	},
+	"Insert elif command statement": {
+		"scope": "bash,shellscript",
+		"prefix": "elif-c",
+		"body": [
+            "elif command; then",
+            "\t$0",
+		],
+		"description": "Insert elif command statement"
+	},
+	"Insert else statement": {
+		"scope": "bash,shellscript",
+		"prefix": "else",
+		"body": [
+            "else",
+            "\t$0",
+		],
+		"description": "Insert if statement"
+	},
+    
+	"Insert case statement": {
+		"scope": "bash,shellscript",
+		"prefix": "case",
+		"body": [
+			"case \"\\$var\" in",
+			"\tvalue)",
+			"\t\t",
+			"\t;;",
+			"\t*)",
+			"\t\techo \"Default\"",
+			"\t;;",
+			"esac"
+		],
+		"description": "Insert case statement"
+	},
+	"Insert compact case statement": {
+		"scope": "bash,shellscript",
+		"prefix": "case-c",
+		"body": [
+			"case \"\\$var\" in",
+			"\tvalue)  ;;",
+			"\t*) echo ;;",
+			"esac"
+		],
+		"description": "Insert compact case statement"
+	},
+	"Insert return statement": {
+		"scope": "bash,shellscript",
+		"prefix": "return",
+		"body": [
+			"return ${0:code}"
+		],
+		"description": "Insert return statement"
+	},
+	"Insert pseudo return statement": {
+		"scope": "bash,shellscript",
+		"prefix": "re-pseudo",
+		"body": [
+			"echo \"\\$${1:varName}\""
+		],
+		"description": "Insert return statement"
+	}
+}

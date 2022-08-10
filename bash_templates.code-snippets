@@ -1,0 +1,50 @@
+{
+    "Insert shellbang": {
+		"scope": "bash,shellscript",
+		"prefix": "!bash",
+		"body": [
+			"#!/${1:usr/bin/bash}"
+		],
+		"description": "Insert shellbang"
+	},
+    "Insert test file": {
+		"scope": "bash,shellscript",
+		"prefix": "!!!testfile",
+		"body": [
+			"#!/usr/bin/bash",
+            "",
+            "source \"\\$BASH_OPT/b_unit/b_unit.sh\"",
+            "source \"\\$BASH_OPT/${1:example/path/file}.sh\"$0",
+            "",
+            "function allias() {",
+            "    assertEquals='bUnit.assertEquals'",
+            "    assertCode='bUnit.assertCode'",
+            "    collectionEquals='bUnit.collectionEquals'",
+            "}",
+            "",
+            "@test.groupName.example() {",
+            "    local expected=\"actual\"",
+            "    local actual=\"$(echo actual)\"",
+            "",
+            "    \\$assertEquals \"\\$expected\" \"\\$actual\"",
+            "}",
+            "",
+            "allias",
+            "bUnit.runTestGroups",
+		],
+		"description": "Insert test file template"
+	},
+    "Insert test": {
+		"scope": "bash,shellscript",
+		"prefix": "!test",
+		"body": [
+            "@test.${1:groupName}.${2:testName}() {",
+            "    local expected=\"actual\"",
+            "    local actual=\"$(echo actual)\"",
+            "    $0",
+            "    \\$assertEquals \"\\$expected\" \"\\$actual\"",
+            "}",
+		],
+		"description": "Insert test template"
+	}
+}

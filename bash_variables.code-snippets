@@ -1,0 +1,34 @@
+{
+	"Get command output": {
+		"scope": "bash,shellscript",
+		"prefix": "cmd",
+		"body": [
+			"\"\\$(${1:command})\""
+		],
+		"description": "Get command output"
+	},
+	"Insert value": {
+		"scope": "bash,shellscript",
+		"prefix": "val",
+		"body": [
+			"\"\\$$1\""
+		],
+		"description": "Insert value"
+	},
+	"Insert variable": {
+		"scope": "bash,shellscript",
+		"prefix": "var",
+		"body": [
+			"$1=\"\\$$2\""
+		],
+		"description": "Insert variable"
+	},
+	"Insert local variable": {
+		"scope": "bash,shellscript",
+		"prefix": "local",
+		"body": [
+			"local $1=\"\\$$2\""
+		],
+		"description": "Insert local variable"
+	}
+}
