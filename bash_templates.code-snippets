@@ -68,8 +68,8 @@
         "local input=\"${1:path/to/file}\"",
         "local lines=()",
         "",
-        "while IFS= read -r line",
-        "    do lines[\\${#lines[@]}]=\"\\$line\"",
+        "while IFS= read -r line; do",
+        "    lines[\\${#lines[@]}]=\"\\$line\"",
         "done < \"\\$input\"",
 		],
 		"description": "Insert read file"
