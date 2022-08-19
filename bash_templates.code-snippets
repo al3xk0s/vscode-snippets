@@ -14,7 +14,7 @@
       "body": [
         "source ../lib/import.sh ",
         "",
-        "@import ../lib/${1:path/file}.sh",
+        "import ../lib/${1:path/file}.sh",
       ],
       "description": "Insert import source"
       },
@@ -27,7 +27,7 @@
         "",
         "source ../lib/import.sh ",
         "",
-        "@import ../lib/b_unit/b_unit.sh",
+        "import ../lib/b_unit/b_unit.sh",
         "",
         "function allias() {",
         "    assertEquals='bUnit.assertEquals'",
